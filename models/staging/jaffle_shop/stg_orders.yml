@@ -1,0 +1,27 @@
+version: 2
+
+models:  
+  - name: stg_orders
+    columns:
+      - name: order_id
+        description: Primary key for orders
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: Foreign key from customers
+        tests:
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+      - name: status
+        description: Order status
+        tests:
+          - accepted_values:
+              values: ['completed','shipped','returned','return_pending','placed']
+    
+    
+              
+          
+    
+    
