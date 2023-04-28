@@ -14,11 +14,15 @@ sources:
               - not_null  
       
       - name: orders
+        description: "{{doc('stg_orders')}}"
         columns:
           - name: id
             description: "primary key"
             tests:
               - unique
               - not_null
+          - name: status
+            description: "{{doc('stg_orders')}}"
+          
               
           
