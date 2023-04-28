@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: fact_orders
+    description: One record per Order
+    columns:
+      - name: payment_id
+        description: Primary key
+
+
+
