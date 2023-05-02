@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: orders_by_customers
+    description: select total order count per customer
+    columns:
+      - name: customer_id
+        description: customer id
+      
+  

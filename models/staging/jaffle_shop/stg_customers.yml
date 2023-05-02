@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "stage customers"
+    columns:
+      - name: customer_id
+        description: Primary key for customers
+        tests:
+          - not_null
+          - unique  
+          - generic_test_pk_is_always_positive_number
+      - name: first_name
+        description: first_name
+      - name: last_name
+        description: last_name
+      

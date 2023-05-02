@@ -33,6 +33,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   DBT_BASIC:
+    +required_docs: true
     +required_tests: {"unique.*|not_null": 2}
     marts: 
       +required_tests: {"relationship.*": 1}     
@@ -40,3 +41,5 @@ models:
        +materialized: table
     staging:
       +materialized: view
+
+on-run-end: "{{ dbt_artifacts.upload_results(results) }}"
