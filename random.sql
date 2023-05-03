@@ -1,0 +1,1 @@
+select * from ANALYTICS.dbt_rtumati_dbt_test__audit.unique_stg_orders_customer_id;

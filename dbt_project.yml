@@ -43,3 +43,10 @@ models:
       +materialized: view
 
 on-run-end: "{{ dbt_artifacts.upload_results(results) }}"
+
+tests:
+  jaffle_shop:
+    +severity: warn
+    +store_failures: true
+    +schema: test_failures
+

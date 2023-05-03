@@ -3,7 +3,7 @@ select
     orderid as order_id,
     paymentmethod as payment_method,
     status,
-    amount,
+    {{cents_to_dollars('amount')}} as amount,
     created,
     _batched_at
 

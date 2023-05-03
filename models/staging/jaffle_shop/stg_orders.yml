@@ -12,7 +12,12 @@ models:
       - name: customer_id
         description: Foreign key from customers
         tests:   
-          - generic_test_pk_is_always_positive_number     
+          - generic_test_pk_is_always_positive_number   
+          - unique:
+              config:
+                limit: 10
+                store_failures: true
+                schema: test_failures
           - relationships:
               to: ref('stg_customers')
               field: customer_id
