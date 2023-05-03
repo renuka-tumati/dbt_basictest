@@ -8,3 +8,12 @@ models:
         tests:
           - not_null
           - unique  
+      - name: amount
+        description: amount per order
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 5
+              row_condition: "order_id is not null"
+              strictly: true
+            
+                

@@ -11,8 +11,7 @@ models:
           - unique
       - name: customer_id
         description: Foreign key from customers
-        tests:
-          - unique    
+        tests:   
           - generic_test_pk_is_always_positive_number     
           - relationships:
               to: ref('stg_customers')

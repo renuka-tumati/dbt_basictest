@@ -5,4 +5,9 @@ sources:
     database: raw
     schema: stripe
     tables:
-      - name: payment        
+      - name: payment  
+        columns:
+          - name: amount
+            tests:
+              - dbt_utils.expression_is_true:
+                  expression: "> 0"

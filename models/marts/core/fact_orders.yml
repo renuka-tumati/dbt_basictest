@@ -10,6 +10,8 @@ models:
           - not_null
           - unique
           - generic_test_pk_is_always_positive_number
+          - dbt_utils.expression_is_true:
+              expression: "> 0"
           - relationships:
               to: ref('stg_payments')
               field: payment_id
@@ -18,6 +20,7 @@ models:
         tests:
           - average_dollars_spent_greater_than_one:         
               group_by_column: customer_id
+          
       
           
 
